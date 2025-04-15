@@ -114,8 +114,7 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-<!-- TODO: briefly argue your choice of design or design something
-new; then delete this comment -->
+I'm picking my fitness tracker component from my brainstorming assignment. I think it's interesting and something I can see myself using. It should also be relatively simple since it's very similar to Queue. I updated my methods to make them simpler, so now I am just tracking the weights that someone does in an exercise, instead of the weights and reps. My To-Do list idea is also interesting, but I think it'll get too complicated for me and the client with the Map and Map Pair parts. My application tracker has too many things I would need to keep track of, like the posted and due date, requirements, industry, position, and that would be too hard to implement. Simplifying it would just end up making the tracker not very useful for the client because you need to consider all of those metrics.
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
