@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
+## [2025.04.16]
+
+### Added
+
+- Designed kernel and enhanced interfaces for FitnessTracker component
+
+### Updated
+
+- Changed design to include kernel methods addWeight, length, removeLast and enhanced methods findPR, getCurrentProgress, and findFirst.
 
 ## [2025.04.15]
 
