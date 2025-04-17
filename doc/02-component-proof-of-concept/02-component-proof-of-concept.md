@@ -114,8 +114,7 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-<!-- TODO: briefly argue your choice of design or design something
-new; then delete this comment -->
+I'm picking my fitness tracker component from my brainstorming assignment. I think it's interesting and something I can see myself using. It should also be relatively simple since it's very similar to Queue. I updated my methods to make them simpler, so now I am just tracking the weights that someone does in an exercise, instead of the weights and reps. My To-Do list idea is also interesting, but I think it'll get too complicated for me and the client with the Map and Map Pair parts. My application tracker has too many things I would need to keep track of, like the posted and due date, requirements, industry, position, and that would be too hard to implement. Simplifying it would just end up making the tracker not very useful for the client because you need to consider all of those metrics.
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
@@ -153,8 +152,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
-
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
 Here's what I would expect to see at the minimum:
@@ -168,19 +165,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2025.04.15
 
 ### Added
 
-- Designed a proof of concept for <!-- insert name of component here --> component
+- Designed a proof of concept for FitnessTracker component
 
 ### Updated
 
-- Changed design to include ...
+- Changed design to include wrote instance methods for findPR(), getCurrentProgress(), and findFirst(). Created a main method to show how a user would use these methods. Used the kernel methods to implement the instance methods.
 
 ```
 
-Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
+Here `2025.04.15` would be the date of your submission, such as 2024.04.21.
 
 You may notice that things are nicely linked in the root CHANGELOG. If you'd
 like to accomplish that, you will need to make GitHub releases after each pull
