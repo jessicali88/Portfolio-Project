@@ -23,7 +23,7 @@ public interface FitnessTrackerKernel extends Standard<FitnessTracker> {
      * @updates this
      * @ensures {@code this = <x> * #this}
      */
-    void addWeight(Integer x);
+    void addWeight(int x);
 
     /**
      * Removes first weight {@code x} from the front of {@code this}.
@@ -33,7 +33,7 @@ public interface FitnessTrackerKernel extends Standard<FitnessTracker> {
      * @requires {@code this /= <>}
      * @ensures {@code #this = <removeFirst> * this}
      */
-    Integer removeFirst();
+    int removeFirst();
 
     /**
      * Reports length of {@code this}.
