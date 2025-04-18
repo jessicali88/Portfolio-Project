@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
+## [2025.04.17]
+
+### Added
+
+- Designed abstract class for FitnessTracker component
+
+### Updated
+
+- Changed design to swapped out removeLast kernel method to removeFirst. It makes more sense to implement the abstract class using FIFO since it's easier. I eventually also want to use a Java component (Queue) to implement my methods and using removeFirst is more similar to dequeue. Because of this change, I swapped out the findFirst() enhanced method for a more complex getConsistencyScore() method that finds the standard deviation and therefore variability of the user-entered weights. I wanted to add more data analytics.
+
 ## [2025.04.16]
 
 ### Added

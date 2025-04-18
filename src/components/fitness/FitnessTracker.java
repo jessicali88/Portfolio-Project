@@ -1,4 +1,4 @@
-// package components.FitnessTracker;
+package components.fitness;
 
 /**
  * {@code FitnessTrackerKernel} enhanced with secondary methods.
@@ -33,14 +33,16 @@ public interface FitnessTracker extends FitnessTrackerKernel {
     int getCurrentProgress();
 
     /**
-     * Returns the first weight recorded in {@code this}.
+     * Returns the standard deviation in weight recorded in {@code this}.
      *
-     * @return integer that is the first value in the {@code this}
-     * @requires <pre>
+     * @return standard deviation of the weights in {@code this}
+     * @requires
+     *
+     *           <pre>
      * this is not empty
-     * </pre>
+     *           </pre>
      *
-     * @ensures this = #this and @code findFirst is a prefix of this
+     * @ensures this = #this
      */
-    int findFirst();
+    public double getConsistencyScore();
 }

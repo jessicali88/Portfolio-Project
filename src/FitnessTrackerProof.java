@@ -8,11 +8,11 @@ import components.queue.Queue1L;
  * @author Jessica Li
  *
  */
-public class FitnessTracker {
+public class FitnessTrackerProof {
 
     private Queue<Integer> rep;
 
-    public FitnessTracker() {
+    public FitnessTrackerProof() {
         this.rep = new Queue1L<>();
     }
 
@@ -31,13 +31,13 @@ public class FitnessTracker {
         return last;
     }
 
-    public FitnessTracker newInstance() {
-        return new FitnessTracker();
+    public FitnessTrackerProof newInstance() {
+        return new FitnessTrackerProof();
     }
 
-    public void transferFrom(FitnessTracker other) {
+    public void transferFrom(FitnessTrackerProof other) {
         this.rep = other.rep;
-        other = new FitnessTracker();
+        other = new FitnessTrackerProof();
     }
 
     /**
@@ -54,7 +54,7 @@ public class FitnessTracker {
      */
     public int findPR() {
         int max = 0;
-        FitnessTracker copy = this.newInstance();
+        FitnessTrackerProof copy = this.newInstance();
         //dequeue from this
         while (this.length() != 0) {
             int temp = this.removeLast();
@@ -84,7 +84,7 @@ public class FitnessTracker {
      */
     public int getCurrentProgress() {
         int progress = 0;
-        FitnessTracker copy = this.newInstance();
+        FitnessTrackerProof copy = this.newInstance();
         //dequeue from this
         int last = this.removeLast();
         //remove until there's just one entry
@@ -113,7 +113,7 @@ public class FitnessTracker {
      * @ensures this = #this
      */
     public int findFirst() {
-        FitnessTracker copy = this.newInstance();
+        FitnessTrackerProof copy = this.newInstance();
         //remove until there's just one entry
         while (this.length() != 1) {
             int temp = this.removeLast();
@@ -135,7 +135,7 @@ public class FitnessTracker {
     public static void main(String[] args) {
 
         // create deadlift object
-        FitnessTracker deadlift = new FitnessTracker();
+        FitnessTrackerProof deadlift = new FitnessTrackerProof();
 
         // add weights to the deadlift collection
         deadlift.addWeight(105);
