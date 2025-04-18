@@ -44,5 +44,5 @@ public interface FitnessTracker extends FitnessTrackerKernel {
      *
      * @ensures this = #this
      */
-    public double getConsistencyScore();
+    double getConsistencyScore();
 }

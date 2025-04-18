@@ -101,7 +101,7 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
             sumSq += Math.pow(copyRemovedWeight - avg, 2);
             this.addWeight(copyRemovedWeight);
         }
-        return Math.sqrt(sumSq / n);
+        return Math.round(Math.sqrt(sumSq / n));
     }
 
     /**
@@ -123,13 +123,15 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
         FitnessTracker copy = this.newInstance();
         while (this.length() != 0) {
             int removedWeight = this.removeFirst();
-            result.concat(removedWeight + ", ");
+            result = result.concat(removedWeight + ", ");
             //restore
             copy.addWeight(removedWeight);
         }
         this.transferFrom(copy);
         //don't include extra comma at end
-        return result.substring(0, -2);
+
+        return result;
+        //return result.substring(0, resultLength - 1);
     }
 
     /**
@@ -164,6 +166,9 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
             //restore
             thisCopy.addWeight(thisRemoved);
             xCopy.addWeight(xRemoved);
+        }
+        if (this.length() != x.length()) {
+            isEqual = false;
         }
         this.transferFrom(thisCopy);
         x.transferFrom(xCopy);
