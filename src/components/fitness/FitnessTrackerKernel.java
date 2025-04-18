@@ -1,19 +1,19 @@
-// package components.FitnessTracker;
+package components.fitness;
 
 import components.standard.Standard;
 
 /**
- * Last-in-first-out (LIFO) fitness tracker kernel component with primary
+ * First-in-first-out (FIFO) fitness tracker kernel component with primary
  * methods. (Note: by package-wide convention, all references are non-null.)
  *
- * @mathmodel type StackKernel is modeled by string of Integers
+ * @mathmodel type FitnessTracker is modeled by string of Integers
  * @initially {@code
  * ():
  *  ensures
  *   this = <>
  * }
  */
-public interface FitnessTrackerKernel extends Standard<FitnessTrackerProof> {
+public interface FitnessTrackerKernel extends Standard<FitnessTracker> {
     /**
      * Adds weight {@code x} to the end of {@code this}.
      *
@@ -26,14 +26,14 @@ public interface FitnessTrackerKernel extends Standard<FitnessTrackerProof> {
     void addWeight(Integer x);
 
     /**
-     * Removes last weight {@code x} from the end of {@code this}.
+     * Removes first weight {@code x} from the front of {@code this}.
      *
      * @return the entry removed
      * @updates this
      * @requires {@code this /= <>}
-     * @ensures {@code #this = <removeLast> * this}
+     * @ensures {@code #this = <removeFirst> * this}
      */
-    Integer removeLast();
+    Integer removeFirst();
 
     /**
      * Reports length of {@code this}.
