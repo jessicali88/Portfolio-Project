@@ -26,7 +26,8 @@ public interface FitnessTrackerKernel extends Standard<FitnessTracker> {
     void addWeight(int x);
 
     /**
-     * Removes first weight {@code x} from the front of {@code this}.
+     * Removes and returns first weight {@code x} from the front of
+     * {@code this}.
      *
      * @return the entry removed
      * @updates this

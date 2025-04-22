@@ -21,14 +21,12 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
         assert this.length() != 0 : "Violation of: this is not empty";
         int max = 0;
         FitnessTracker copy = this.newInstance();
-        //dequeue from this
         while (this.length() != 0) {
-            int temp = this.removeFirst();
-            if (temp > max) {
-                max = temp;
+            int tempEntry = this.removeFirst();
+            if (tempEntry > max) {
+                max = tempEntry;
             }
-            //enqueue to copy
-            copy.addWeight(temp);
+            copy.addWeight(tempEntry);
         }
         this.transferFrom(copy);
         return max;
@@ -42,7 +40,7 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
      * @requires
      *
      *           <pre>
-     * this is not empty
+     * |this| >= 2
      *           </pre>
      *
      * @ensures this = #this and the returned value = last element - first
@@ -50,7 +48,7 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
      */
     @Override
     public int getCurrentProgress() {
-        assert this.length() != 0 : "Violation of: this is not empty";
+        assert this.length() >= 2 : "Violation of: this is not empty";
 
         int progress = 0;
         FitnessTracker copy = this.newInstance();
@@ -119,19 +117,20 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
     @Override
     public String toString() {
         assert this != null : "Violation of: this is not null";
-        String result = new String();
-        FitnessTracker copy = this.newInstance();
-        while (this.length() != 0) {
-            int removedWeight = this.removeFirst();
-            result = result.concat(removedWeight + ", ");
-            //restore
-            copy.addWeight(removedWeight);
+        String weightString = new String();
+        if (this.length() > 0) {
+            FitnessTracker copy = this.newInstance();
+            while (this.length() != 0) {
+                int removedWeight = this.removeFirst();
+                weightString = weightString.concat(removedWeight + ", ");
+                copy.addWeight(removedWeight);
+            }
+            this.transferFrom(copy);
+            //don't include extra comma at end
+            weightString = weightString.substring(0, weightString.length() - 2);
         }
-        this.transferFrom(copy);
-        //don't include extra comma at end
 
-        return result;
-        //return result.substring(0, resultLength - 1);
+        return weightString;
     }
 
     /**
@@ -151,19 +150,16 @@ public abstract class FitnessTrackerSecondary implements FitnessTracker {
     @Override
     public boolean equals(Object obj) {
         assert this != null : "Violation of: this is not null";
-        //cast
         FitnessTracker x = (FitnessTracker) obj;
         FitnessTracker thisCopy = this.newInstance();
         FitnessTracker xCopy = this.newInstance();
         boolean isEqual = true;
-        //check length and each entry is equal
         while (this.length() == x.length() && this.length() != 0) {
             int thisRemoved = this.removeFirst();
             int xRemoved = x.removeFirst();
             if (thisRemoved != xRemoved) {
                 isEqual = false;
             }
-            //restore
             thisCopy.addWeight(thisRemoved);
             xCopy.addWeight(xRemoved);
         }

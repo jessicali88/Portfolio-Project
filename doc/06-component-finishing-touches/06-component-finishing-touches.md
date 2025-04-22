@@ -303,18 +303,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I think I understand the software development process a lot better now that I've had to really think deeply about how all the pieces fit together. Building an entire component from scratch definitely helped me to solidify my learning and see how each part of the component affects other parts, like how changing a parameter in one method makes the rest of the files throw errors. I also learned about the importance of testing and going back repeatedly to polish my work.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+I felt like I knew the general definition of the different classes and interfaces but now I truly understand why it's organized hierarchically the way that it is and what needs to go into each part. I finally understood casting and learned more about the Standard and common methods, which we don't focus on as much in class.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+I learned that I really like the software development process. It's very organized and structured, starting from writing detailed contracts in the interface and building the rest of the software out from that. Starting with the proof of concept at the beginning also really helped me to visualize the final product and have a clear goal in mind. Honestly I felt pretty lost after the brainstorming assignment and I felt like I still had no idea what I was actually supposed to do, but after the proof of concept I was much more confident. I also learned that I really like Git. I see how useful and important having version control would be in a workplace setting with a large project involving many people and many parts. Even though I still don't think I want to go into software development, I have a new appreciation for it and a much better holistic understanding of it.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -322,29 +322,29 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I had to troubleshoot and learn a lot of small tricks here and there to refine my project. I learned how to ask good questions and how to find solutions to them on the internet, which I anticipate needing in all my future coursework and on the job. I also learned how to use Git well. Throughout this semester my Software partner and I haven't been using branching or pull requests, we've just been working on it together at the same time and copying and pasting our updated code into our shared repo. Now I know how to do branching, pull requests, pushes, merging, and similar skills in Git. I also learned the importance of project management. It's good to space things out and revisit the project with fresh eyes as I work on it.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Constructed and implemented a new self-designed Java software component
+- Built 33 robust test cases and demos to systemacially ensure component works as intended
+- Utilized Git to track changes and give and receive feedback from peers to polish over the course of a semester
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I feel more confident working in the tech industry now that I have a better understanding of the software development process as a whole. While the topic of my component wasn't career related, I still enjoyed created it and can see myself using it.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I still want to become a project/program/product manager in the future. This summer I will be interning at Amazon in Seattle as a program manager intern. I don't know how much coding I'll be expected to do there, but I'm exicted for what the future has in store for me and I think with my knowledge of Git and the software development process, I'll have no problem understanding software projects - or at least I'll be able to understand them better than most people who don't have a background in coding. I don't know any mentors right now since most professors don't have experience in project management. However, I have some connections on LinkedIn who have similar roles and I bet I'll meet even more mentors during my internship that I can connect with.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -379,8 +379,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull

@@ -1,7 +1,7 @@
 package components.fitness;
 
 /**
- * Customized JUnit test fixture for {@code Set3a}.
+ * Customized JUnit test fixture for {@code FitnessTracker1}.
  */
 public class FitnessTracker1Test extends FitnessTrackerTest {
     @Override

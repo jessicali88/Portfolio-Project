@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2025.04.18]
+
+### Added
+
+- Designed test suite for FitnessTracker component
+- Designed two different use cases for FitnessTracker component demonstrating use for a deadlift set and leg day training routine.
+
+### Updated
+
+- Changed design to include 33 test cases, testing all standard, common, kernel, and enhanced methods.
+- updated contract for getConsistencyScore to require at least two entries
+- updated toString to work for 0 entries and not include last comma and space
+- made variable names more descriptive
+- updated convention to constrain entries to positive integers
+
 ## [2025.04.17]
 
 ### Added

@@ -5,7 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
- * JUnit test fixture for {@code Set<String>}'s constructor and kernel methods.
+ * JUnit test fixture for {@code FitnessTracker}'s constructor, standard,
+ * kernel, common, and enhanced methods.
  *
  * @author Jessica Li
  *
@@ -13,31 +14,22 @@ import org.junit.Test;
 
 public abstract class FitnessTrackerTest {
     /**
-     * Invokes the appropriate {@code Set} constructor for the implementation
-     * under test and returns the result.
+     * Invokes the appropriate {@code FitnessTracker} constructor for the
+     * implementation under test and returns the result.
      *
-     * @return the new set
+     * @return the new FitnessTracker
      * @ensures constructorTest = {}
      */
     protected abstract FitnessTracker constructorTest();
 
-    // /**
-    //  * Invokes the appropriate {@code Set} constructor for the reference
-    //  * implementation and returns the result.
-    //  *
-    //  * @return the new set
-    //  * @ensures constructorRef = {}
-    //  */
-    // protected abstract FitnessTracker constructorRef();
-
     /**
-     * Creates and returns a {@code Set<String>} of the implementation under
+     * Creates and returns a {@code FitnessTracker} of the implementation under
      * test type with the given entries.
      *
      * @param args
-     *            the entries for the set
-     * @return the constructed set
-     * @requires [every entry in args is unique]
+     *            the entries for the FitnessTracker
+     * @return the constructed FitnessTracker
+     * @requires [every entry is a positive integer]
      * @ensures createFromArgsTest = [entries in args]
      */
     private FitnessTracker createFromArgsTest(int... args) {
@@ -47,24 +39,6 @@ public abstract class FitnessTrackerTest {
         }
         return exercise;
     }
-
-    // /**
-    //  * Creates and returns a {@code Set<String>} of the reference implementation
-    //  * type with the given entries.
-    //  *
-    //  * @param args
-    //  *            the entries for the set
-    //  * @return the constructed set
-    //  * @requires [every entry in args is unique]
-    //  * @ensures createFromArgsRef = [entries in args]
-    //  */
-    // private FitnessTracker createFromArgsRef(int... args) {
-    //     FitnessTracker exercise = this.constructorRef();
-    //     for (int weights : args) {
-    //         exercise.addWeight(weights);
-    //     }
-    //     return exercise;
-    // }
 
     /**
      * Test no argument constructor.
@@ -78,12 +52,12 @@ public abstract class FitnessTrackerTest {
 
     /* Standard Tests */
     /**
-     * Test new instance.
+     * Test newInstance.
      */
     @Test
     public final void testNewInstance() {
-        FitnessTracker m = this.constructorTest();
-        FitnessTracker mExpected = m.newInstance();
+        FitnessTracker mExpected = this.constructorTest();
+        FitnessTracker m = mExpected.newInstance();
         assertEquals(mExpected, m);
     }
 
@@ -129,7 +103,7 @@ public abstract class FitnessTrackerTest {
         FitnessTracker nToTransfer = this.createFromArgsTest(2);
         FitnessTracker mExpected = this.createFromArgsTest(2);
         FitnessTracker nExpected = m.newInstance();
-        m.transferFrom(mExpected);
+        m.transferFrom(nToTransfer);
         assertEquals(mExpected, m);
         assertEquals(nExpected, nToTransfer);
     }
@@ -308,7 +282,7 @@ public abstract class FitnessTrackerTest {
      */
     @Test
     public final void testGetCurrentProgressPositive() {
-        FitnessTracker m = this.createFromArgsTest(1, 4, 3, 5);
+        FitnessTracker m = this.createFromArgsTest(1, 5);
         int progress = m.getCurrentProgress();
         assertEquals(4, progress);
     }
@@ -355,12 +329,32 @@ public abstract class FitnessTrackerTest {
 
     /* Common Methods Tests */
     /**
-     * Test getConsistencyScore for 1 element.
+     * Test toString.
      */
     @Test
     public final void testToString() {
         FitnessTracker m = this.createFromArgsTest(1, 2, 3, 4);
-        String mExpected = "1, 2, 3, 4, ";
+        String mExpected = "1, 2, 3, 4";
+        assertEquals(mExpected, m.toString());
+    }
+
+    /**
+     * Test toString for 1 element.
+     */
+    @Test
+    public final void testToStringOne() {
+        FitnessTracker m = this.createFromArgsTest(1);
+        String mExpected = "1";
+        assertEquals(mExpected, m.toString());
+    }
+
+    /**
+     * Test toString on empty.
+     */
+    @Test
+    public final void testToStringEmpty() {
+        FitnessTracker m = this.createFromArgsTest();
+        String mExpected = "";
         assertEquals(mExpected, m.toString());
     }
 

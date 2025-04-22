@@ -9,7 +9,7 @@ public class DeadliftsDemo {
         deadlifts.addWeight(145);
         deadlifts.addWeight(150);
         int deadliftPR = deadlifts.findPR();
-        // find the current progress for deadlifts (125 - 105)
+        // find the current progress for deadlifts (150 - 100)
         int deadliftProgress = deadlifts.getCurrentProgress();
         System.out.println("Deadlift PR: " + deadliftPR + " lbs");
         System.out.println("Deadlift progress: " + deadliftProgress + " lbs");

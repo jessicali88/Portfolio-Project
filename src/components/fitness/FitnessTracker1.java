@@ -8,7 +8,8 @@ import java.util.Queue;
  * implementations of primary methods.
  *
  * @convention <pre>
- * [$this.rep is a valid representation of FitnessTracker]
+ * [$this.rep is a valid representation of FitnessTracker
+ * and entires in $this.rep are positive integers]
  * </pre>
  * @correspondence <pre>
  * this = [$this.rep]
@@ -67,7 +68,7 @@ public class FitnessTracker1 extends FitnessTrackerSecondary {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
         assert source instanceof FitnessTracker1 : ""
-                + "Violation of: source is of dynamic type NaturalNumberExample";
+                + "Violation of: source is of dynamic type FitnessTracker1";
         /*
          * This cast cannot fail since the assert above would have stopped
          * execution in that case.
