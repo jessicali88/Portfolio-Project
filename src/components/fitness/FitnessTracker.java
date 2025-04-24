@@ -24,7 +24,7 @@ public interface FitnessTracker extends FitnessTrackerKernel {
      * @return integer that is the difference between the last and first
      *         elements in {@code this}
      * @requires <pre>
-     * this is not empty
+     * |this| >= 2
      *</pre>
      *
      * @ensures this = #this and the returned value = last element - first
@@ -44,5 +44,5 @@ public interface FitnessTracker extends FitnessTrackerKernel {
      *
      * @ensures this = #this
      */
-    public double getConsistencyScore();
+    double getConsistencyScore();
 }
